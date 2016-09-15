@@ -7,26 +7,42 @@
 
 // Pre-processor directives.
 #include <iostream>
+#include <ctime>
 #include <cstdlib>
 using namespace std;
 
-// A function that receives no inputs and generates no outputs, but still performs a variety of tasks.
+
+// Prototype functions.
+
+// A function that receives no inputs and generates no outputs, and performs a variety of tasks.
 void ex02();
 
+// Another function that receives no inputs and generates no outputs, and performs a variety of tasks.
+void ex03();
+
+
+// Main function.
 int main() {
 
+	// Seed the rng using the internal clock.
+	srand(time(0));
+
+	// Run functions to do all kinds of things!
 	ex02();
+	ex03();
 
 }
 
+// A function that receives no inputs and generates no outputs, and performs a variety of tasks.
 void ex02() {
 
-	// intializes a boolean as true
+	// Intializes a boolean "hasPassedTest" as true.
 	bool hasPassedTest = true;
 
 
 	// Creates two random integers and determines whether or not the first is greater than or equal to the second.
 	// Prints the result to the console.
+
 	int x = rand() % 100;
 	int y = rand() % 100;
 	
@@ -38,9 +54,13 @@ void ex02() {
 		cout << "x is less than y." << endl;
 	}
 
+	// Extra space because it looks better.
+	cout << endl;
 
-	// Prompts the user to input a value for a variable, and determines whether or not that value is less than 100.
+
+	// Prompts the user to input a number of shares and determines whether or not that value is less than 100.
 	// Prints the result to the console.
+
 	int numberOfShares;
 	cout << "How many shares? ";
 	cin >> numberOfShares;
@@ -52,9 +72,13 @@ void ex02() {
 		cout << "Hooray!  You have at least 100 shares!!!" << endl;
 	}
 
+	// Extra space because it looks better.
+	cout << endl;
+
 
 	// receives a box and book width from the user and determines whether the box width is divisible by the book width.
 	// Prints the result to the console.
+
 	int boxWidth;
 	int bookWidth;
 
@@ -71,8 +95,12 @@ void ex02() {
 		cout << "Your books will leave some empty space in the box.  Not very efficient..." << endl;
 	}
 
+	// Extra space because it looks better.
+	cout << endl;
+
 
 	// Receives a shelf life and outside temperature from the user and decreases the shelf life if the temperature is high enough.
+
 	int shelfLife;
 	int outsideTemp;
 
@@ -83,5 +111,35 @@ void ex02() {
 	cin >> outsideTemp;
 
 	if (outsideTemp > 90) shelfLife -= 4;
+
+	// Extra space because it looks better.
+	cout << endl;
+
+}
+
+// Another function that receives no inputs and generates no outputs, and performs a variety of tasks.
+void ex03() {
+
+	// Receives a side length for a square from the user and computes the length of the square's diagonol.
+	// Outputs the result to the console.
+
+	double squareSideLength;
+	double squareDiagonalLength;
+	cout << "What is the side length of your square?";
+	cin >> squareSideLength;
+
+	squareDiagonalLength = squareSideLength*sqrt(squareSideLength);
+
+	cout << "The length of the square's diagonal is: " << squareDiagonalLength << "." << endl;
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Prompts the user to enter a 'y' or 'n' char.  
+	// Outputs "yes" if they entered 'y' and outputs "no" if they entered 'n'.
+
+
+
 
 }
