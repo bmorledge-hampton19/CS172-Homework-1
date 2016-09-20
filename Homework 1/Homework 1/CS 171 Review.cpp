@@ -25,6 +25,9 @@ void ex03();
 // Yet another function that receives no inputs and generates no outputs, and performs a variety of tasks.
 void ex04();
 
+// One last function that receives no inputs and generates no outputs, and performs a variety of tasks.
+void ex05();
+
 
 // A function that receives an interger and returns twice that interger.
 int doubler(int halfOfReturn);
@@ -34,6 +37,13 @@ int add(int num1, int num2);
 
 // A function that uses pass by reference to add 1 to a value.
 void increment(int& numberToBeIncremented);
+
+
+// A function that receives an Array and its size and outputs its contents to the console.
+void whatsInTheArray(int theArray[], int arraySize);
+
+// A function that receives an Array and a value and checks for that value within the array.  Returns true or false.
+bool isItInTheArray(int theArray[], int arraySize, int check);
 
 
 
@@ -48,6 +58,10 @@ int main() {
 	ex02();
 	ex03();
 	ex04();
+	ex05();
+
+	//End function.  Everything is ok!
+	return 0;
 
 }
 
@@ -286,12 +300,77 @@ void ex04() {
 
 }
 
+
+// One last function that receives no inputs and generates no outputs, and performs a variety of tasks.
+void ex05() {
+
+	// Reads in five intergers from the user and stores them in an array.
+
+	const int ARRAY_VALUES_SIZE = 5;
+	int arrayValues[ARRAY_VALUES_SIZE];
+
+	for (int i = 0; i < 5; i++) {
+
+		cout << "Gimme an interger! ";
+		cin >> arrayValues[i];
+
+	}
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Calculates and outputs the sum and product of the values in the array of values given by the user.
+
+	int arraySum = arrayValues[0];
+	int arrayProduct = arrayValues[0];
+
+	for (int i = 1; i < 5; i++) {
+
+		arraySum += arrayValues[i];
+		arrayProduct *= arrayValues[i];
+
+	}
+
+	cout << "The sum of the values is: " << arraySum << endl;
+	cout << "The product of the values is: " << arrayProduct << endl;
+
+	// Extra space because it looks better.
+	cout << endl;
+
+	
+	// Calls the whatsInTheArray function to print all of arrayValues values to the screen.
+
+	whatsInTheArray(arrayValues, ARRAY_VALUES_SIZE);
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Calls the isItInTheArray function with an interger from the user to determine whether or not it is in the array arrayValues.
+
+	int valueToCheck = 0;
+	cout << "What value do you want to check for? ";
+	cin >> valueToCheck;
+
+	if (isItInTheArray(arrayValues, ARRAY_VALUES_SIZE, valueToCheck)) {
+		cout << "It's in the array!";
+	}
+	else {
+		cout << "It's not in the array...";
+	}
+
+
+}
+
+
+
 // A function that receives an interger and returns twice that interger.
 int doubler(int halfOfReturn) {
 	return halfOfReturn * 2;
 }
 
-// A function that receivies two intergers and returns their sum.
+// A function that receives two intergers and returns their sum.
 int add(int num1, int num2) {
 	return num1 + num2;
 }
@@ -299,4 +378,25 @@ int add(int num1, int num2) {
 // A function that uses pass by reference to add 1 to a value.
 void increment(int& numberToBeIncremented) {
 	numberToBeIncremented++;
+}
+
+
+// A function that receives an Array and its size and outputs its contents to the console.
+void whatsInTheArray(int theArray[], int arraySize) {
+
+	for (int i = 0; i < arraySize; i++) {
+		cout << theArray[i] << endl;
+	}
+
+}
+
+// A function that receives an Array and a value and checks for that value within the array.  Returns true or false.
+bool isItInTheArray(int theArray[], int arraySize, int check) {
+
+	for (int i = 0; i < arraySize; i++) {
+		if (theArray[i] = check) return true;
+	}
+
+	return false;
+
 }
