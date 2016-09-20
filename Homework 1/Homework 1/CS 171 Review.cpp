@@ -13,6 +13,7 @@
 using namespace std;
 
 
+
 // Prototype functions.
 
 // A function that receives no inputs and generates no outputs, and performs a variety of tasks.
@@ -20,6 +21,21 @@ void ex02();
 
 // Another function that receives no inputs and generates no outputs, and performs a variety of tasks.
 void ex03();
+
+// Yet another function that receives no inputs and generates no outputs, and performs a variety of tasks.
+void ex04();
+
+
+// A function that receives an interger and returns twice that interger.
+int doubler(int halfOfReturn);
+
+// A function that receivies two intergers and returns their sum.
+int add(int num1, int num2);
+
+// A function that uses pass by reference to add 1 to a value.
+void increment(int& numberToBeIncremented);
+
+
 
 
 // Main function.
@@ -31,8 +47,11 @@ int main() {
 	// Run functions to do all kinds of things!
 	ex02();
 	ex03();
+	ex04();
 
 }
+
+
 
 // A function that receives no inputs and generates no outputs, and performs a variety of tasks.
 void ex02() {
@@ -118,6 +137,8 @@ void ex02() {
 
 }
 
+
+
 // Another function that receives no inputs and generates no outputs, and performs a variety of tasks.
 void ex03() {
 
@@ -171,4 +192,111 @@ void ex03() {
 	string emptyString = "";
 
 
+}
+
+
+
+// Yet another function that receives no inputs and generates no outputs, and performs a variety of tasks.
+void ex04() {
+
+	// Run a loop that terminates only when the user inputs a number between 1 and 10.
+
+	int loopTerminator = 0;
+
+	while (loopTerminator > 9 || loopTerminator < 2) {
+
+		cout << "Input a number between 1 and 10, exclusive: ";
+		cin >> loopTerminator;
+
+	}
+
+	cout << "Thanks!";
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Use the previous variable to print out the sum of the cubes from 1 to the loopTerminator. (All within a for loop)
+	// Print the result to the console.
+
+	int cubeSum = 0;
+
+	for (int i = 1; i <= loopTerminator; i++) {
+		cubeSum += pow(i, 3);
+	}
+
+	cout << "The sum of all cubes from 1 to " << loopTerminator << " is " << cubeSum << "." << endl;
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Prints out a number of asterisks equivalent to the loopTerminator in a do while loop.
+
+	int asterisks = 0;
+
+	do {
+
+		cout << "*";
+		asterisks++;
+
+	} while (asterisks < loopTerminator);
+
+	// Extra space because it looks better.
+	cout << endl << endl;
+
+
+	// Uses a for loop to print all even numbers from 0 and 40 to the console.
+
+	for (int i = 0; i < 41; i += 2) {
+		cout << i << " ";
+	}
+
+
+	// Calls the doubler function. Double check to make sure it worked correctly.
+
+	int twiceLoopTerminator = doubler(loopTerminator);
+
+	if (loopTerminator * 2 != twiceLoopTerminator) {
+		cout << "Something went wrong..." << endl;
+	}
+
+
+	// Call the add function with two random numbers. Double check to make sure it worked correctly.
+
+	int rand1 = rand() % 100;
+	int rand2 = rand() % 100;
+
+	int randSum = add(rand1, rand2);
+
+	if (randSum != rand1 + rand2) {
+		cout << "something went wrong..." << endl;
+	}
+
+
+	// Call the increment function with an interger variable copied from the loop terminator. Double check to make sure it worked correctly.
+
+	int movingUp = loopTerminator;
+
+	increment(movingUp);
+
+	if (movingUp != loopTerminator + 1) {
+		cout << "something went wrong..." << endl;
+	}
+
+}
+
+// A function that receives an interger and returns twice that interger.
+int doubler(int halfOfReturn) {
+	return halfOfReturn * 2;
+}
+
+// A function that receivies two intergers and returns their sum.
+int add(int num1, int num2) {
+	return num1 + num2;
+}
+
+// A function that uses pass by reference to add 1 to a value.
+void increment(int& numberToBeIncremented) {
+	numberToBeIncremented++;
 }
