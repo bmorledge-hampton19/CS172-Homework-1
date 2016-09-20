@@ -164,7 +164,7 @@ void ex03() {
 	cout << "What is the side length of your square?";
 	cin >> squareSideLength;
 
-	squareDiagonalLength = squareSideLength*sqrt(squareSideLength);
+	squareDiagonalLength = squareSideLength*sqrt(2);
 
 	cout << "The length of the square's diagonal is: " << squareDiagonalLength << "." << endl;
 
@@ -189,17 +189,16 @@ void ex03() {
 	// Initialize a character as the tab character.
 	char tab = 9;
 
-	cout << tab << "Did it work?";
-
-	// Extra space because it looks better.
-	cout << endl;
-
 
 	// Declare a string and prompt the user to enter their mailing address into the string.
 	
 	string mailingAddress;
 	cout << "Please enter your mailing address: ";
-	getline(cin, mailingAddress, '\n');
+	cin.ignore();
+	getline(cin, mailingAddress);
+
+	// Extra space because it looks better.
+	cout << endl;
 
 
 	// initialize a string to be empty.
@@ -266,6 +265,7 @@ void ex04() {
 		cout << i << " ";
 	}
 
+	cout << endl << endl;
 
 	// Calls the doubler function. Double check to make sure it worked correctly.
 
@@ -360,6 +360,8 @@ void ex05() {
 		cout << "It's not in the array...";
 	}
 
+	// Extra space because it looks better.
+	cout << endl << endl;
 
 }
 
@@ -394,7 +396,7 @@ void whatsInTheArray(int theArray[], int arraySize) {
 bool isItInTheArray(int theArray[], int arraySize, int check) {
 
 	for (int i = 0; i < arraySize; i++) {
-		if (theArray[i] = check) return true;
+		if (theArray[i] == check) return true;
 	}
 
 	return false;
