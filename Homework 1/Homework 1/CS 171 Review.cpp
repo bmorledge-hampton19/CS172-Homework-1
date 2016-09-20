@@ -7,6 +7,7 @@
 
 // Pre-processor directives.
 #include <iostream>
+#include <string>
 #include <ctime>
 #include <cstdlib>
 using namespace std;
@@ -139,7 +140,35 @@ void ex03() {
 	// Prompts the user to enter a 'y' or 'n' char.  
 	// Outputs "yes" if they entered 'y' and outputs "no" if they entered 'n'.
 
+	char yesOrNo;
+	cout << "Type 'y' for yes and 'n' for no. ";
+	cin >> yesOrNo;
 
+	if (yesOrNo == 'y') cout << "Yes" << endl;
+	else if (yesOrNo == 'n') cout << "No" << endl;
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Initialize a character as the tab character.
+	char tab = 9;
+
+	cout << tab << "Did it work?";
+
+	// Extra space because it looks better.
+	cout << endl;
+
+
+	// Declare a string and prompt the user to enter their mailing address into the string.
+	
+	string mailingAddress;
+	cout << "Please enter your mailing address: ";
+	getline(cin, mailingAddress, '\n');
+
+
+	// initialize a string to be empty.
+	string emptyString = "";
 
 
 }
