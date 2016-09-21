@@ -81,11 +81,11 @@ void ex02() {
 	int y = rand() % 100;
 	
 	if (x > y || x == y) {
-		cout << "x is greater than or equal to y." << endl;
+		cout << "x with value " << x << " is greater than or equal to y with value " << y << "." << endl;
 	}
 
 	else {
-		cout << "x is less than y." << endl;
+		cout << "x with value " << x << " is less than y with value " << y << "." << endl;
 	}
 
 	// Extra space because it looks better.
@@ -96,7 +96,7 @@ void ex02() {
 	// Prints the result to the console.
 
 	int numberOfShares;
-	cout << "How many shares? ";
+	cout << "How many shares do you have? ";
 	cin >> numberOfShares;
 
 	if (numberOfShares < 100) {
@@ -116,10 +116,10 @@ void ex02() {
 	int boxWidth;
 	int bookWidth;
 
-	cout << "What is the box width?";
+	cout << "What is the box width? ";
 	cin >> boxWidth;
 
-	cout << "What is the book width?";
+	cout << "What is the book width? ";
 	cin >> bookWidth;
 
 	if (boxWidth%bookWidth == 0) {
@@ -134,17 +134,20 @@ void ex02() {
 
 
 	// Receives a shelf life and outside temperature from the user and decreases the shelf life if the temperature is high enough.
+	// Prints the result to the console.
 
 	int shelfLife;
 	int outsideTemp;
 
-	cout << "What is the shelf life for your chocolate?";
+	cout << "What is the shelf life for your chocolate? ";
 	cin >> shelfLife;
 
-	cout << "What is the outside Temperature?";
+	cout << "What is the outside Temperature? ";
 	cin >> outsideTemp;
 
 	if (outsideTemp > 90) shelfLife -= 4;
+
+	cout << "With the outside temperature taken into account, your chocolate's shelf life is " << shelfLife << "." << endl;
 
 	// Extra space because it looks better.
 	cout << endl;
@@ -161,7 +164,7 @@ void ex03() {
 
 	double squareSideLength;
 	double squareDiagonalLength;
-	cout << "What is the side length of your square?";
+	cout << "What is the side length of your square? ";
 	cin >> squareSideLength;
 
 	squareDiagonalLength = squareSideLength*sqrt(2);
@@ -191,11 +194,13 @@ void ex03() {
 
 
 	// Declare a string and prompt the user to enter their mailing address into the string.
+	// Prints the resulting string to the console.
 	
 	string mailingAddress;
 	cout << "Please enter your mailing address: ";
 	cin.ignore();
 	getline(cin, mailingAddress);
+	cout << "Your Mailing Address: " << mailingAddress << endl;
 
 	// Extra space because it looks better.
 	cout << endl;
